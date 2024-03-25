@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupcakes</title>
+</head>
+<body>
+    <div id="list_cupcakes">
+        <h1>Cupcakes</h1>
+        <ul>
+        {% for cupcake in cupcakes%}
+            <a href="/api/cupcakes/{{ cupcake.id }}">
+                <li>{{ cupcake.image}} {{ cupcake.flavor }} {{ cupcake.size }}</li>
+            </a>
+        {% endfor %}
+        </ul>
+    </div>
+    <div id="add_cupcake">
+        <form for="/api/cupcakes" method="POST">
+            <input name="flavor" type="text" placeholder="flavor">
+            <input name="size" type="text" placeholder="size">
+            <input name="image" type="url" placeholder="image">
+            <input name="rating" type="text" placeholder="rating">
+        </form>
+    </div>
+    
+    
+</body>
+</html>
